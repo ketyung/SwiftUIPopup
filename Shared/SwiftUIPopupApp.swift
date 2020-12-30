@@ -11,8 +11,8 @@ import SwiftUI
 struct SwiftUIPopupApp: App {
     var body: some Scene {
         WindowGroup {
-            PopUpView()
-            //PopUpViewOnAppear()
+            //PopUpView()
+            PopUpViewOnAppear()
             //ShowPopUpViews()
         }
     }

@@ -11,6 +11,7 @@ struct PopUpView : View {
   
     @State private var showPopUp = false
   
+    @State private var selectedChoice = ""
     
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
@@ -66,7 +67,14 @@ struct PopUpView : View {
             
             Text("Choices Of Fruits").font(Font.custom("Avenir-Black", size: 18.0))
 
-            List(choices, id:\.self) { Text($0) }
+            List(choices, id:\.self) {
+                
+                Text($0).onTapGesture {
+                    
+                
+                }
+                
+            }
     
             Button(action: {
                 

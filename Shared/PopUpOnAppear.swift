@@ -16,23 +16,7 @@ struct PopUpViewOnAppear : View {
      
         ZStack {
    
-            VStack(alignment: .leading, spacing: 5){
-                
-                Text ("Great you're here. Have a nice day! A Pop-up will show in 3 seconds")
-            }
-            .onAppear{
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                
-                    
-                    withAnimation(.linear(duration: 0.5)){
-                        
-                        self.showPopUp = true
-                    }
-                }
-                
-            }
-            
+            mainView()
             
             if $showPopUp.wrappedValue {
                 
@@ -41,6 +25,27 @@ struct PopUpViewOnAppear : View {
         }
         
         
+    }
+    
+    
+    private func mainView() -> some View {
+        
+        VStack(alignment: .leading, spacing: 5){
+            
+            Text ("Great you're here. Have a nice day! A Pop-up will show in 3 seconds")
+        }
+        .onAppear{
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            
+                
+                withAnimation(.linear(duration: 0.5)){
+                    
+                    self.showPopUp = true
+                }
+            }
+            
+        }
     }
     
     
